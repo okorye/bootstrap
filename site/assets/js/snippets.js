@@ -13,9 +13,7 @@
 
 /* global bootstrap: false */
 
-(() => {
-  'use strict'
-
+export default () => {
   // --------
   // Tooltips
   // --------
@@ -167,4 +165,4 @@
       }, false)
     })
   }
-})()
+}

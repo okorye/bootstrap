@@ -9,11 +9,11 @@
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
 
-/* global ClipboardJS: false, bootstrap: false */
+/* global bootstrap: false */
 
-(() => {
-  'use strict'
+import ClipboardJS from 'clipboard'
 
+export default () => {
   // Insert copy to clipboard button before .highlight
   const btnTitle = 'Copy to clipboard'
   const btnEdit = 'Edit on StackBlitz'
@@ -87,4 +87,4 @@
       tooltipBtn.setContent({ '.tooltip-inner': btnTitle })
     }, { once: true })
   })
-})()
+}

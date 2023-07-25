@@ -9,7 +9,7 @@ security:
       - ^HUGO_
       - NETLIFY
   gotemplates:
-    allowActionJSTmpl: true
+    allowActionJSTmpl:  true
 
 markup:
   goldmark:
@@ -20,6 +20,9 @@ markup:
   tableOfContents:
     startLevel:         2
     endLevel:           6
+
+build:
+  noJSConfigInAssets:   true
 
 buildDrafts:            true
 buildFuture:            true
@@ -34,6 +37,8 @@ module:
   mounts:
     - source:           dist
       target:           static/docs/5.3/dist
+    - source:           js/dist
+      target:           assets/bootstrap/js/dist
     - source:           site/assets
       target:           assets
     - source:           site/content
