@@ -39,7 +39,6 @@ const openBootstrapSnippet = (htmlSnippet, jsSnippet, classes) => {
     <link href="${params.cssCdn}" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/${params.docsVersion}/assets/css/docs.css" rel="stylesheet">
     <title>Bootstrap Example</title>
-    <${'script'} src="${params.jsBundleCdn}"></${'script'}>
   </head>
   <body class="p-3 m-0 border-0 ${classes}">
 
@@ -47,6 +46,7 @@ const openBootstrapSnippet = (htmlSnippet, jsSnippet, classes) => {
 ${htmlSnippet.trimStart().replace(/^/gm, '    ').replace(/^ {4}$/gm, '').trimEnd()}
     <!-- Example Code End -->
 
+    <${'script'} src="${params.jsBundleCdn}"></${'script'}>
   </body>
 </html>
 `
