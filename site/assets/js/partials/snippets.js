@@ -4,13 +4,6 @@
 // In a real project please adapt this content to your needs.
 // ++++++++++++++++++++++++++++++++++++++++++
 
-/*!
- * JavaScript for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2024 The Bootstrap Authors
- * Licensed under the Creative Commons Attribution 3.0 Unported License.
- * For details, see https://creativecommons.org/licenses/by/3.0/.
- */
-
 /* global bootstrap: false */
 
 export default () => {
