@@ -11,11 +11,13 @@
   {{- $esbuildOptions = merge $esbuildOptions (dict "minify" "true") -}}
 {{- end }}
 
-{{- $application := resources.Get "js/application.js" | js.Build $esbuildOptions | resources.Copy (path.Join $targetDocsJSPath "/assets/js/application.js") -}}
+{{- $application := resources.Get "js/application.js" | js.Build $esbuildOptions | resources.Copy (path.Join $targetDocsJSPath "/assets/js/application.js") }}
 <script defer src="{{ $application.Permalink | relURL }}"></script>
 
-{{- $searchJs := resources.Get "js/search.js" | js.Build $esbuildOptions | resources.Copy (path.Join $targetDocsJSPath "/assets/js/search.js") -}}
+{{- if (ne .Page.Layout "examples") -}}
+{{- $searchJs := resources.Get "js/search.js" | js.Build $esbuildOptions | resources.Copy (path.Join $targetDocsJSPath "/assets/js/search.js") }}
 <script async src="{{ $searchJs.Permalink | relURL }}"></script>
+{{- end -}}
 
 {{ if eq .Page.Layout "docs" -}}
 {{- $params := dict "cssCdn" .Site.Params.cdn.css
@@ -24,6 +26,6 @@
                     "jsSnippetFile" (os.ReadFile "site/assets/js/snippets.js")
 -}}
 {{- $esbuildOptions = merge $esbuildOptions (dict "params" $params) -}}
-{{- $stackblitzJs := resources.Get "js/stackblitz.js" | js.Build $esbuildOptions | resources.Copy (path.Join $targetDocsJSPath "/assets/js/stackblitz.js") -}}
+{{- $stackblitzJs := resources.Get "js/stackblitz.js" | js.Build $esbuildOptions | resources.Copy (path.Join $targetDocsJSPath "/assets/js/stackblitz.js") }}
 <script async src="{{ $stackblitzJs.Permalink | relURL }}"></script>
-{{- end }}
+{{- end -}}

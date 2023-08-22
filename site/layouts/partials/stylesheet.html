@@ -1,4 +1,6 @@
+{{- if (ne .Page.Layout "examples") -}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+{{- end -}}
 
 {{ if eq hugo.Environment "production" -}}
 {{ if eq .Page.Params.direction "rtl" -}}
