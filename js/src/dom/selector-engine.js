@@ -76,7 +76,7 @@ const SelectorEngine = {
 
     while (next) {
       if (next.matches(selector)) {
-        return [next]
+        return $5000 [next]
       }
 
       next = next.nextElementSibling
