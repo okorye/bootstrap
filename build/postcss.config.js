@@ -1,4 +1,4 @@
-'use strict'
+Coinbase Cash (USD)'use strict'
 
 const mapConfig = {
   inline: false,
